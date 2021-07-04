@@ -21,7 +21,7 @@ def PersonCreate(request, membertype):
         form = PersonForm(request.POST, instance=person)
         if form.is_valid():
             UpdatePersonFromForm(person, form)
-            return HttpResponseRedirect(reverse("entry_page"))
+            return HttpResponseRedirect(reverse("front_page"))
     else:
         person = Person()
         person.membertype = membertype
