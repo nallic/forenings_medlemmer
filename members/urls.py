@@ -5,7 +5,7 @@ from members.views import (
     PersonUpdate,
     WaitingListSetSubscription,
     DeclineInvitation,
-    EntryPage,
+    AccountCreate,
     userCreated,
     ConfirmFamily,
     QuickpayCallback,
@@ -24,8 +24,9 @@ from graphene_django.views import GraphQLView
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-    url(r"^$", EntryPage, name="entry_page"),
+    url(r"^$", AccountCreate, name="account_create"),
     url(r"^graphql", csrf_exempt(GraphQLView.as_view(graphiql=True))),
+    # url(r"^account/create/$", AccountCreate, name="account_create"),
     url(
         r"^account/login/$",
         auth_views.LoginView.as_view(template_name="members/login.html"),

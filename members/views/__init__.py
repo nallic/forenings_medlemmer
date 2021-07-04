@@ -7,7 +7,7 @@ from members.views.WaitingListSetSubscription import WaitingListSetSubscription
 from members.views.DeclineInvitation import DeclineInvitation
 from members.views.ActivitySignup import ActivitySignup
 from members.views.UpdatePersonFromForm import UpdatePersonFromForm
-from members.views.EntryPage import EntryPage
+from members.views.AccountCreate import AccountCreate
 from members.views.userCreated import userCreated
 from members.views.volunteerSignup import volunteerSignup
 from members.views.QuickpayCallback import QuickpayCallback

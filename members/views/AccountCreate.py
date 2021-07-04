@@ -10,7 +10,7 @@ from members.models.person import Person
 
 
 @xframe_options_exempt
-def EntryPage(request):
+def AccountCreate(request):
     if request.method == "POST":
         # figure out which form was filled out.
         if request.POST["form_id"] == "signup":
@@ -29,7 +29,7 @@ def EntryPage(request):
                         "Denne email adresse er allerede oprettet. Du kan tilføje flere børn på samme forælder, når du er kommet videre! - Log ind ovenfor, for at få adgang.",
                     )
                     return render(
-                        request, "members/entry_page.html", {"signupform": signup}
+                        request, "members/account_create.html", {"signupform": signup}
                     )
                 except Exception:
                     # all is fine - we did not expect any
@@ -97,9 +97,9 @@ def EntryPage(request):
                 return HttpResponseRedirect(reverse("user_created"))
             else:
                 return render(
-                    request, "members/entry_page.html", {"signupform": signup}
+                    request, "members/account_create.html", {"signupform": signup}
                 )
 
     # initial load (if we did not return above)
     signup = signupForm()
-    return render(request, "members/entry_page.html", {"signupform": signup})
+    return render(request, "members/account_create.html", {"signupform": signup})
